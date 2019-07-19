@@ -12,13 +12,13 @@ def index():
 
     p = GPIO.PWM(12, 50)
 
-    p.start(7.5)
+    p.start(10)
 
-    p.ChangeDutyCycle(7.5) # turn towards 90 degree
+    p.ChangeDutyCycle(10) # turn towards 90 degree
     time.sleep(1) # sleep 1 second
     p.ChangeDutyCycle(5) # turn towards 0 degree
     time.sleep(0.4) # sleep 1 second
-    p.ChangeDutyCycle(7.5) # turn towards 90 degree
+    p.ChangeDutyCycle(10) # turn towards 90 degree
     time.sleep(1) # sleep 1 second
 
     p.stop()
