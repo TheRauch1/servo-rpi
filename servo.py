@@ -35,6 +35,7 @@ def reset():
     p = GPIO.PWM(12, 50)
 
     p.start(10)
+    p.ChangeDutyCycle(10) # turn towards 90 degree
 
     p.stop()
     GPIO.cleanup()
