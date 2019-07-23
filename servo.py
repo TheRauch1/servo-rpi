@@ -25,6 +25,21 @@ def index():
     GPIO.cleanup()
     
     return 'Hello world'
+
+@app.route('/reset')
+def reset():
+    GPIO.setmode(GPIO.BOARD)
+
+    GPIO.setup(12, GPIO.OUT)
+
+    p = GPIO.PWM(12, 50)
+
+    p.start(10)
+
+    p.stop()
+    GPIO.cleanup()
+
+    return 'Hello, World'
     
 
 if __name__ == '__main__':
