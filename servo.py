@@ -24,7 +24,7 @@ def index():
     p.stop()
     GPIO.cleanup()
     
-    return 'Hello world'
+    return 'started pc'
 
 @app.route('/reset')
 def reset():
@@ -43,7 +43,7 @@ def reset():
     p.stop()
     GPIO.cleanup()
 
-    return 'Hello, World'
+    return 'servo reset'
     
 
 if __name__ == '__main__':
