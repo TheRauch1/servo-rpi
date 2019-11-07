@@ -8,6 +8,10 @@ app = Flask(__name__)
 def index():
     GPIO.setmode(GPIO.BOARD)
 
+    GPIO.setup(10, GPIO.OUT)
+
+    GPIO.output(10, HIGH)
+
     GPIO.setup(12, GPIO.OUT)
 
     p = GPIO.PWM(12, 50)
@@ -21,6 +25,9 @@ def index():
     p.ChangeDutyCycle(10) # turn towards 90 degree
     time.sleep(1) # sleep 1 second
 
+    GPIO.output(10, LOW)
+
+
     p.stop()
     GPIO.cleanup()
     
@@ -29,6 +36,11 @@ def index():
 @app.route('/reset')
 def reset():
     GPIO.setmode(GPIO.BOARD)
+
+    
+    GPIO.setup(10, GPIO.OUT)
+
+    GPIO.output(10, HIGH)
 
     GPIO.setup(12, GPIO.OUT)
 
@@ -39,6 +51,8 @@ def reset():
     time.sleep(1)
     p.ChangeDutyCycle(10)
     time.sleep(1)
+
+    GPIO.output(10, LOW)
 
     p.stop()
     GPIO.cleanup()
