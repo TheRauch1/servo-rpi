@@ -20,7 +20,7 @@ def index():
 
     p.ChangeDutyCycle(10) # turn towards 90 degree
     time.sleep(1) # sleep 1 second
-    p.ChangeDutyCycle(5) # turn towards 0 degree
+    p.ChangeDutyCycle(4) # turn towards 0 degree
     time.sleep(0.4) # sleep 1 second
     p.ChangeDutyCycle(10) # turn towards 90 degree
     time.sleep(1) # sleep 1 second
